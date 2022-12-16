@@ -459,13 +459,13 @@ public class Calculator extends javax.swing.JFrame {
         expo_y = Integer.parseInt(number_text.getText());
         if("sq_root".equals(opr)){
               
-       double n_root = Integer.parseInt(number_text.getText());
+       double n_root = Double.parseDouble(number_text.getText());
        
        double square_root =  Math.sqrt(n_root);
        number_text.setText(""+square_root);
             
         }else if ("cb_root".equals(opr)){
-            double n_croot = Integer.parseInt(number_text.getText());
+            double n_croot = Double.parseDouble(number_text.getText());
             double cb_root = Math.cbrt(n_croot);
             
             number_text.setText(""+cb_root);
