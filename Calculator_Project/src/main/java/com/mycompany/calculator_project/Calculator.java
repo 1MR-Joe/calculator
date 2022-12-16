@@ -14,6 +14,9 @@ public class Calculator extends javax.swing.JFrame {
     /**
      * Creates new form Calculator
      */
+    double expo_x = 0;
+    double expo_y = 0;
+    double expo_opr = 0;
     String opr;
     public Calculator() {
         initComponents();
@@ -453,7 +456,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActionPerformed
-        // TODO add your handling code here:
+        expo_y = Integer.parseInt(number_text.getText());
         if("sq_root".equals(opr)){
               
        double n_root = Integer.parseInt(number_text.getText());
@@ -466,6 +469,18 @@ public class Calculator extends javax.swing.JFrame {
             double cb_root = Math.cbrt(n_croot);
             
             number_text.setText(""+cb_root);
+        }else if ("squaring".equals(opr)){
+            double squaring = Math.pow(expo_x, 2);
+            
+            number_text.setText("" + squaring);
+        }else if("cubing".equals(opr)){
+            double cubing = Math.pow(expo_x, 3);
+            
+            number_text.setText("" + cubing);
+        }else if("exponentiation".equals(opr)){
+            expo_opr = Math.pow(expo_x, expo_y);
+            number_text.setText("" + expo_opr);
+           
         }
         
     }//GEN-LAST:event_btn_ActionPerformed
@@ -508,7 +523,10 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_factorialActionPerformed
 
     private void root3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root3ActionPerformed
-        // TODO add your handling code here:
+        opr = "exponentiation";
+        opr_label.setText("^");
+        expo_x = Integer.parseInt(number_text.getText());
+        number_text.setText("");
     }//GEN-LAST:event_root3ActionPerformed
 
     private void btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2ActionPerformed
@@ -564,11 +582,15 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_11ActionPerformed
 
     private void btn_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_12ActionPerformed
-        
+        opr = "squaring";
+        opr_label.setText("x²");
+        expo_x = Integer.parseInt(number_text.getText());
     }//GEN-LAST:event_btn_12ActionPerformed
 
     private void multiply1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiply1ActionPerformed
-        
+        opr = "cubing";
+        opr_label.setText("x³");
+        expo_x = Integer.parseInt(number_text.getText());
     }//GEN-LAST:event_multiply1ActionPerformed
 
     private void number_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_textActionPerformed
