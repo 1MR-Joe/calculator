@@ -493,7 +493,16 @@ public class Calculator extends javax.swing.JFrame {
             number_text.setText("" + sub);   
             
         }
-        
+        else if("multi".equals(opr)){
+            double multi = expo_x * expo_y;
+            number_text.setText("" + multi);   
+            
+        }
+        else if("division".equals(opr)){
+            double division = expo_x / expo_y;
+            number_text.setText("" + division);   
+            
+        }
     }//GEN-LAST:event_btn_ActionPerformed
 
     private void btn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_0ActionPerformed
@@ -514,7 +523,10 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        // TODO add your handling code here:
+        opr="division";
+        expo_x=Double.parseDouble(number_text.getText());
+        number_text.setText("");
+        opr_label.setText("÷");   // TODO add your handling code here:
     }//GEN-LAST:event_divideActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
