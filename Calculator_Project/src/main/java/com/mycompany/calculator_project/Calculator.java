@@ -529,7 +529,10 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_root2ActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        // TODO add your handling code here:
+        opr="multi";
+        expo_x=Double.parseDouble(number_text.getText());
+        number_text.setText("");
+        opr_label.setText("*");
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void factorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialActionPerformed
