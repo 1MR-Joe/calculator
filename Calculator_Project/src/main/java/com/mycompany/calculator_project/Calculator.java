@@ -18,9 +18,23 @@ public class Calculator extends javax.swing.JFrame {
     double expo_y = 0;
     double expo_opr = 0;
     String opr;
-     double result=0;
-     char ope;
+    double number;
+     double result;
      
+     //char ope;
+     
+    public void calculat(){
+     switch(opr){
+         case"+":
+             result = number +Double.parseDouble(number_text.getText());
+             number_text.setText(""+result);
+             break;
+        case"-":
+             result = number -Double.parseDouble(number_text.getText());
+             number_text.setText(""+result);
+             break;
+     }   
+    }
     public Calculator() {
         initComponents();
     }
@@ -459,6 +473,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActionPerformed
+        
         expo_y = Double.parseDouble(number_text.getText());
         
         if("sq_root".equals(opr)){
@@ -484,14 +499,7 @@ public class Calculator extends javax.swing.JFrame {
         }else if("exponentiation".equals(opr)){
             expo_opr = Math.pow(expo_x, expo_y);
             number_text.setText("" + expo_opr);
-           
-        }else if("sum".equals(opr)){
-            double sum = expo_x + expo_y;
-            number_text.setText("" +  sum);   
-        }else if("sub".equals(opr)){
-            double sub = expo_x - expo_y;
-            number_text.setText("" + sub);   
-            
+        
         }
         else if("multi".equals(opr)){
             double multi = expo_x * expo_y;
@@ -500,8 +508,11 @@ public class Calculator extends javax.swing.JFrame {
         }
         else if("division".equals(opr)){
             double division = expo_x / expo_y;
-            number_text.setText("" + division);   
+            number_text.setText("" + division);
             
+        }else {
+        calculat();
+        number_text.setText(""+result);
         }
     }//GEN-LAST:event_btn_ActionPerformed
 
@@ -516,17 +527,20 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dotActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-        opr="sub";
-        expo_x=Double.parseDouble(number_text.getText());
-        number_text.setText("");
-        opr_label.setText("-");
+        if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+         calculat();
+     }
+    
+     opr="-";
+       number =Double.parseDouble(number_text.getText());
+       number_text.setText("");
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
         opr="division";
         expo_x=Double.parseDouble(number_text.getText());
         number_text.setText("");
-        opr_label.setText("÷");   // TODO add your handling code here:
+        opr_label.setText("÷");
     }//GEN-LAST:event_divideActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
@@ -587,6 +601,8 @@ public class Calculator extends javax.swing.JFrame {
     private void clsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clsActionPerformed
         number_text.setText("");
         opr_label.setText("");
+        result=0;
+        opr="";
     }//GEN-LAST:event_clsActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -627,10 +643,13 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_number_textActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        opr="sum";
-        expo_x=Double.parseDouble(number_text.getText());
-        number_text.setText("");
-        opr_label.setText("+");
+     if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+         calculat();
+     }
+    
+     opr="+";
+       number =Double.parseDouble(number_text.getText());
+       number_text.setText("");
     }//GEN-LAST:event_addActionPerformed
 
     /**
