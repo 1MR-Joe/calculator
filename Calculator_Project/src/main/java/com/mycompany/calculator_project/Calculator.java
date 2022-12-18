@@ -18,6 +18,10 @@ public class Calculator extends javax.swing.JFrame {
     double expo_y = 0;
     double expo_opr = 0;
     String opr;
+    double sum=0;
+    double sup=0;
+     double result=0;
+     char ope;
     public Calculator() {
         initComponents();
     }
@@ -347,7 +351,7 @@ public class Calculator extends javax.swing.JFrame {
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addComponent(multiply, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(divide, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                    .addComponent(add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))))))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,7 +500,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dotActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-        // TODO add your handling code here:
+        setOpe('-');
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -596,9 +600,13 @@ public class Calculator extends javax.swing.JFrame {
     private void number_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_number_textActionPerformed
-
+    private void setOpe(char operation){
+        expo_x=Double.parseDouble(number_text.getText());
+        number_text.setText("");
+        ope=operation;
+    }
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        setOpe('+');
     }//GEN-LAST:event_addActionPerformed
 
     /**
