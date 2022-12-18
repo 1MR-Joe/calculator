@@ -18,10 +18,9 @@ public class Calculator extends javax.swing.JFrame {
     double expo_y = 0;
     double expo_opr = 0;
     String opr;
-    double sum=0;
-    double sup=0;
      double result=0;
      char ope;
+     
     public Calculator() {
         initComponents();
     }
@@ -460,7 +459,8 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActionPerformed
-        expo_y = Integer.parseInt(number_text.getText());
+        expo_y = Double.parseDouble(number_text.getText());
+        
         if("sq_root".equals(opr)){
               
        double n_root = Double.parseDouble(number_text.getText());
@@ -485,6 +485,13 @@ public class Calculator extends javax.swing.JFrame {
             expo_opr = Math.pow(expo_x, expo_y);
             number_text.setText("" + expo_opr);
            
+        }else if("sum".equals(opr)){
+            double sum = expo_x + expo_y;
+            number_text.setText("" +  sum);   
+        }else if("sub".equals(opr)){
+            double sub = expo_x - expo_y;
+            number_text.setText("" + sub);   
+            
         }
         
     }//GEN-LAST:event_btn_ActionPerformed
@@ -500,7 +507,10 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dotActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-        setOpe('-');
+        opr="sub";
+        expo_x=Double.parseDouble(number_text.getText());
+        number_text.setText("");
+        opr_label.setText("-");
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
@@ -600,13 +610,12 @@ public class Calculator extends javax.swing.JFrame {
     private void number_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_number_textActionPerformed
-    private void setOpe(char operation){
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        opr="sum";
         expo_x=Double.parseDouble(number_text.getText());
         number_text.setText("");
-        ope=operation;
-    }
-    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        setOpe('+');
+        opr_label.setText("+");
     }//GEN-LAST:event_addActionPerformed
 
     /**
