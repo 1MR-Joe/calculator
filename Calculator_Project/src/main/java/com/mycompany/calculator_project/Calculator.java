@@ -1,16 +1,13 @@
 package com.mycompany.calculator_project;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author DELL
  */
 public class Calculator extends javax.swing.JFrame {
-
     /**
      * Creates new form Calculator
      */
@@ -20,9 +17,6 @@ public class Calculator extends javax.swing.JFrame {
     String opr;
     double number;
      double result;
-     
-     //char ope;
-     
     public void calculat(){
      switch(opr){
          case"+":
@@ -33,10 +27,9 @@ public class Calculator extends javax.swing.JFrame {
              result = number -Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
              break;
-     }   
-    }
+    }}
     public Calculator() {
-        initComponents();
+    initComponents();
     }
 
     /**
@@ -447,100 +440,79 @@ public class Calculator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"6");
+    number_text.setText(number_text.getText()+"6");
     }//GEN-LAST:event_btn_6ActionPerformed
 
     private void btn_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_7ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"7");
+    number_text.setText(number_text.getText()+"7");
     }//GEN-LAST:event_btn_7ActionPerformed
 
     private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"9");
+    number_text.setText(number_text.getText()+"9");
     }//GEN-LAST:event_btn_9ActionPerformed
 
     private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
-        //type number(1) to the number text
-        number_text.setText(number_text.getText()+"1");
+    number_text.setText(number_text.getText()+"1");
         
     }//GEN-LAST:event_btn_1ActionPerformed
 
     private void btn_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_8ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"8");
+    number_text.setText(number_text.getText()+"8");
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActionPerformed
-        
-        expo_y = Double.parseDouble(number_text.getText());
-        
-        if("sq_root".equals(opr)){
-              
-       double n_root = Double.parseDouble(number_text.getText());
-       
-       double square_root =  Math.sqrt(n_root);
-       number_text.setText(""+square_root);
-            
-        }else if ("cb_root".equals(opr)){
-            double n_croot = Double.parseDouble(number_text.getText());
-            double cb_root = Math.cbrt(n_croot);
-            
-            number_text.setText(""+cb_root);
-        }else if ("squaring".equals(opr)){
-            double squaring = Math.pow(expo_x, 2);
-            
-            number_text.setText("" + squaring);
-        }else if("cubing".equals(opr)){
-            double cubing = Math.pow(expo_x, 3);
-            
-            number_text.setText("" + cubing);
-        }else if("exponentiation".equals(opr)){
-            expo_opr = Math.pow(expo_x, expo_y);
-            number_text.setText("" + expo_opr);
-        
-        }
-        else if("multi".equals(opr)){
-            double multi = expo_x * expo_y;
-            number_text.setText("" + multi);   
-            
-        }
-        else if("division".equals(opr)){
-            double division = expo_x / expo_y;
-            number_text.setText("" + division);
-            
-        }else {
-        calculat();
-        number_text.setText(""+result);
-        }
+    expo_y = Double.parseDouble(number_text.getText());
+    if("sq_root".equals(opr)){
+    double n_root = Double.parseDouble(number_text.getText());
+    double square_root =  Math.sqrt(n_root);
+    number_text.setText(""+square_root);
+    }else if ("cb_root".equals(opr)){
+    double n_croot = Double.parseDouble(number_text.getText());
+    double cb_root = Math.cbrt(n_croot);
+    number_text.setText(""+cb_root);
+    }else if ("squaring".equals(opr)){
+    double squaring = Math.pow(expo_x, 2);
+    number_text.setText("" + squaring);
+    }else if("cubing".equals(opr)){
+    double cubing = Math.pow(expo_x, 3);
+    number_text.setText("" + cubing);
+    }else if("exponentiation".equals(opr)){
+    expo_opr = Math.pow(expo_x, expo_y);
+    number_text.setText("" + expo_opr);
+    }else if("multi".equals(opr)){
+    double multi = expo_x * expo_y;
+    number_text.setText("" + multi);
+    }else if("division".equals(opr)){
+    double division = expo_x / expo_y;
+    number_text.setText("" + division);
+    }else{
+    calculat();
+    number_text.setText(""+result);
+    }
     }//GEN-LAST:event_btn_ActionPerformed
 
     private void btn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_0ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"0");
+    number_text.setText(number_text.getText()+"0");
     }//GEN-LAST:event_btn_0ActionPerformed
 
     private void btn_dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dotActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+".");
+    number_text.setText(number_text.getText()+".");
     }//GEN-LAST:event_btn_dotActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-        if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
-         calculat();
-     }
-    
-     opr="-";
-       number =Double.parseDouble(number_text.getText());
-       number_text.setText("");
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    calculat();
+    }
+    opr="-";
+    number =Double.parseDouble(number_text.getText());
+    number_text.setText("");
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        opr="division";
-        expo_x=Double.parseDouble(number_text.getText());
-        number_text.setText("");
-        opr_label.setText("÷");
+    opr="division";
+    expo_x=Double.parseDouble(number_text.getText());
+    number_text.setText("");
+    opr_label.setText("÷");
     }//GEN-LAST:event_divideActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
@@ -548,17 +520,15 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_modActionPerformed
 
     private void root2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root2ActionPerformed
-        // TODO add your handling code here:
-        opr = "sq_root";
-        opr_label.setText("√(");
-     
+    opr = "sq_root";
+    opr_label.setText("√(");
     }//GEN-LAST:event_root2ActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        opr="multi";
-        expo_x=Double.parseDouble(number_text.getText());
-        number_text.setText("");
-        opr_label.setText("*");
+    opr="multi";
+    expo_x=Double.parseDouble(number_text.getText());
+    number_text.setText("");
+    opr_label.setText("*");
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void factorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialActionPerformed
@@ -566,55 +536,47 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_factorialActionPerformed
 
     private void root3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root3ActionPerformed
-        opr = "exponentiation";
-        opr_label.setText("^");
-        expo_x = Double.parseDouble(number_text.getText());
-        number_text.setText("");
+    opr = "exponentiation";
+    opr_label.setText("^");
+    expo_x = Double.parseDouble(number_text.getText());
+    number_text.setText("");
     }//GEN-LAST:event_root3ActionPerformed
 
     private void btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"2");
+    number_text.setText(number_text.getText()+"2");
     }//GEN-LAST:event_btn_2ActionPerformed
 
     private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"3");
+    number_text.setText(number_text.getText()+"3");
     }//GEN-LAST:event_btn_3ActionPerformed
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"4");
+    number_text.setText(number_text.getText()+"4");
     }//GEN-LAST:event_btn_4ActionPerformed
 
     private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+"5");
+    number_text.setText(number_text.getText()+"5");
     }//GEN-LAST:event_btn_5ActionPerformed
 
     private void backspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backspaceActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText().substring(0,number_text.getText().length()-1));
-       
+    number_text.setText(number_text.getText().substring(0,number_text.getText().length()-1));
     }//GEN-LAST:event_backspaceActionPerformed
 
     private void clsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clsActionPerformed
-        number_text.setText("");
-        opr_label.setText("");
-        result=0;
-        opr="";
+    number_text.setText("");
+    opr_label.setText("");
+    result=0;
+    opr="";
     }//GEN-LAST:event_clsActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        // TODO add your handling code here:
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.dispose();
+    this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    this.dispose();
     }//GEN-LAST:event_exitActionPerformed
 
     private void root4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root4ActionPerformed
-        // TODO add your handling code here:
-        opr = "cb_root";
-        opr_label.setText("³√(");
+    opr = "cb_root";
+    opr_label.setText("³√(");
     }//GEN-LAST:event_root4ActionPerformed
 
     private void btn_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_10ActionPerformed
@@ -622,20 +584,19 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_10ActionPerformed
 
     private void btn_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_11ActionPerformed
-        // TODO add your handling code here:
-        number_text.setText(number_text.getText()+")");
+    number_text.setText(number_text.getText()+")");
     }//GEN-LAST:event_btn_11ActionPerformed
 
     private void btn_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_12ActionPerformed
-        opr = "squaring";
-        opr_label.setText("x²");
-        expo_x = Double.parseDouble(number_text.getText());
+    opr = "squaring";
+    opr_label.setText("x²");
+    expo_x = Double.parseDouble(number_text.getText());
     }//GEN-LAST:event_btn_12ActionPerformed
 
     private void multiply1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiply1ActionPerformed
-        opr = "cubing";
-        opr_label.setText("x³");
-        expo_x = Double.parseDouble(number_text.getText());
+    opr = "cubing";
+    opr_label.setText("x³");
+    expo_x = Double.parseDouble(number_text.getText());
     }//GEN-LAST:event_multiply1ActionPerformed
 
     private void number_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_number_textActionPerformed
@@ -643,13 +604,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_number_textActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-     if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
-         calculat();
-     }
-    
-     opr="+";
-       number =Double.parseDouble(number_text.getText());
-       number_text.setText("");
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    calculat();
+    }
+    opr="+";
+    number =Double.parseDouble(number_text.getText());
+    number_text.setText("");
     }//GEN-LAST:event_addActionPerformed
 
     /**
