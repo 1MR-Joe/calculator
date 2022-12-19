@@ -470,6 +470,12 @@ public class Calculator extends javax.swing.JFrame {
     double n_croot = Double.parseDouble(number_text.getText());
     double cb_root = Math.cbrt(n_croot);
     number_text.setText(""+cb_root);
+    }else if ("factorial".equals(opr)){
+    double nfactorial = Integer.parseInt(number_text.getText());
+    long rfactorial=1;
+    for (int i=2; i<=nfactorial; i++)
+    rfactorial *= i;
+    number_text.setText(""+rfactorial);   
     }else if ("squaring".equals(opr)){
     double squaring = Math.pow(expo_x, 2);
     number_text.setText("" + squaring);
@@ -532,7 +538,8 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void factorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialActionPerformed
-        // TODO add your handling code here:
+    opr = "factorial";
+    opr_label.setText("n!");
     }//GEN-LAST:event_factorialActionPerformed
 
     private void root3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root3ActionPerformed
