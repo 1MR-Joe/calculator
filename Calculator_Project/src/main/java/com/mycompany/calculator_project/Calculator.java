@@ -27,6 +27,14 @@ public class Calculator extends javax.swing.JFrame {
              result = number -Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
              break;
+        case"*":
+             result = number *Double.parseDouble(number_text.getText());
+             number_text.setText(""+result);
+             break;
+        case"÷":
+             result = number /Double.parseDouble(number_text.getText());
+             number_text.setText(""+result);
+             break;     
     }}
     public Calculator() {
     initComponents();
@@ -515,10 +523,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-    opr="division";
-    expo_x=Double.parseDouble(number_text.getText());
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    calculat();
+    }
+    opr="÷";
+    number =Double.parseDouble(number_text.getText());
     number_text.setText("");
-    opr_label.setText("÷");
     }//GEN-LAST:event_divideActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
@@ -531,10 +541,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_root2ActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-    opr="multi";
-    expo_x=Double.parseDouble(number_text.getText());
+ if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    calculat();
+    }
+    opr="*";
+    number =Double.parseDouble(number_text.getText());
     number_text.setText("");
-    opr_label.setText("*");
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void factorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialActionPerformed
