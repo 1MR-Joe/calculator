@@ -31,7 +31,7 @@ public class Calculator extends javax.swing.JFrame {
              result = number *Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
              break;
-        case"÷":
+        case"/":
              result = number /Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
              break;     
@@ -526,7 +526,7 @@ public class Calculator extends javax.swing.JFrame {
     if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
     calculat();
     }
-    opr="÷";
+    opr="/";
     number =Double.parseDouble(number_text.getText());
     number_text.setText("");
     }//GEN-LAST:event_divideActionPerformed
