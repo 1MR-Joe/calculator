@@ -76,11 +76,49 @@ public class libraryForm extends javax.swing.JFrame {
        //category 
        books[4][3] = "Novels";
        
+       //book 6
+       //name
+       books[5][1] = "Gone";
+       //author name
+       books[5][2] = "James Patterson";
+       //category 
+       books[5][3] = "Fiction";
        
+       //book 7
+       //name
+       books[6][1] = "Harry Potter and The Philosopher's Stone";
+       //author name
+       books[6][2] = "J. K. Rowling";
+       //category 
+       books[6][3] = "Children Books";
+       
+       //book 8
+       //name
+       books[7][1] = "Death on The Nile";
+       //author name
+       books[7][2] = "Agatha Christie";
+       //category 
+       books[7][3] = "Fiction";
+       
+       //book 9
+       //name
+       books[8][1] = "Tron: Legacy";
+       //author name
+       books[8][2] = "James Ponti ";
+       //category 
+       books[8][3] = "Fiction";
+       
+       //book 10
+       //name
+       books[9][1] = "Atomic Habits";
+       //author name
+       books[9][2] = "James Clear";
+       //category 
+       books[9][3] = "self improvement";
        
        for(int i = 0; i<=10; i++){
            for(int j = 0; j<4; j++){
-               System.out.print(books[i][j]+"|");
+               System.out.print(books[i][j]+" | ");
            }
            System.out.println("\n");
        }
