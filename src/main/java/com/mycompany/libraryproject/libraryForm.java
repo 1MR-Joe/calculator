@@ -62,59 +62,59 @@ public class libraryForm extends javax.swing.JFrame {
        
        //book 4
        //name
-       books[3][1] = "LOLITA";
+       books[4][1] = "LOLITA";
        //author name
-       books[3][2] = "Vladimir Nabokov";
-       //category 
-       books[3][3] = "Novels";
-       
-       //book 5
-       //name
-       books[4][1] = "THE GRAPES OF WRATH";
-       //author name
-       books[4][2] = "John Steinbeck";
+       books[4][2] = "Vladimir Nabokov";
        //category 
        books[4][3] = "Novels";
        
+       //book 5
+       //name
+       books[5][1] = "THE GRAPES OF WRATH";
+       //author name
+       books[5][2] = "John Steinbeck";
+       //category 
+       books[5][3] = "Novels";
+       
        //book 6
        //name
-       books[5][1] = "Gone";
+       books[6][1] = "Gone";
        //author name
-       books[5][2] = "James Patterson";
+       books[6][2] = "James Patterson";
        //category 
-       books[5][3] = "Fiction";
+       books[6][3] = "Fiction";
        
        //book 7
        //name
-       books[6][1] = "Harry Potter and The Philosopher's Stone";
+       books[7][1] = "Harry Potter and The Philosopher's Stone";
        //author name
-       books[6][2] = "J. K. Rowling";
+       books[7][2] = "J. K. Rowling";
        //category 
-       books[6][3] = "Children Books";
+       books[7][3] = "Children Books";
        
        //book 8
        //name
-       books[7][1] = "Death on The Nile";
+       books[8][1] = "Death on The Nile";
        //author name
-       books[7][2] = "Agatha Christie";
-       //category 
-       books[7][3] = "Fiction";
-       
-       //book 9
-       //name
-       books[8][1] = "Tron: Legacy";
-       //author name
-       books[8][2] = "James Ponti ";
+       books[8][2] = "Agatha Christie";
        //category 
        books[8][3] = "Fiction";
        
+       //book 9
+       //name
+       books[9][1] = "Tron: Legacy";
+       //author name
+       books[9][2] = "James Ponti ";
+       //category 
+       books[9][3] = "Fiction";
+       
        //book 10
        //name
-       books[9][1] = "Atomic Habits";
+       books[10][1] = "Atomic Habits";
        //author name
-       books[9][2] = "James Clear";
+       books[10][2] = "James Clear";
        //category 
-       books[9][3] = "self improvement";
+       books[10][3] = "self improvement";
        
        for(int i = 0; i<=10; i++){
            for(int j = 0; j<4; j++){
