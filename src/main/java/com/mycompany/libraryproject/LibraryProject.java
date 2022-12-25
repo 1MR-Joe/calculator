@@ -12,8 +12,10 @@ package com.mycompany.libraryproject;
 public class LibraryProject {
 
     public static void main(String[] args) {
-        System.out.println("We are ready");
-        
-        System.out.println("are you sure ????");
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new libraryForm().setVisible(true);
+            }
+        });
     }
 }
