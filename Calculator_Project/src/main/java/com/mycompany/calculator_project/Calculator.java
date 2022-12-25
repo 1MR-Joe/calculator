@@ -482,37 +482,55 @@ public class Calculator extends javax.swing.JFrame {
 
     private void btn_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActionPerformed
     expo_y = Double.parseDouble(number_text.getText());
-    if("sq_root".equals(opr)){
-    double n_root = Double.parseDouble(number_text.getText());
-    double square_root =  Math.sqrt(n_root);
-    number_text.setText(""+square_root);
-    }else if ("cb_root".equals(opr)){
-    double n_croot = Double.parseDouble(number_text.getText());
-    double cb_root = Math.cbrt(n_croot);
-    number_text.setText(""+cb_root);
-    }/*else if ("factorial".equals(opr)){
+    if( null == opr){
+        calculat();
+        number_text.setText(""+result);
+    }else switch (opr) {
+            case "sq_root":
+                double n_root = Double.parseDouble(number_text.getText());
+                double square_root =  Math.sqrt(n_root);
+                number_text.setText(""+square_root);
+                break;
+        /*else if ("factorial".equals(opr)){
+        //double n = Integer.parseInt(number_text.getText());
+        number_text.setText(""+ findFactorial((int)expo_y));
+        }*/
+            case "cb_root":
+                double n_croot = Double.parseDouble(number_text.getText());
+                double cb_root = Math.cbrt(n_croot);
+                number_text.setText(""+cb_root);
+                break;
+            case "squaring":
+                double squaring = Math.pow(expo_x, 2);
+                number_text.setText("" + squaring);
+                break;
+            case "cubing":
+                double cubing = Math.pow(expo_x, 3);
+                number_text.setText("" + cubing);
+                break;
+            case "exponentiation":
+                expo_opr = Math.pow(expo_x, expo_y);
+                number_text.setText("" + expo_opr);
+                break;
+            case "multi":
+                double multi = expo_x * expo_y;
+                number_text.setText("" + multi);
+                break;
+            case "division":
+                double division = expo_x / expo_y;
+                number_text.setText("" + division);
+                break;
+            default:
+                calculat();
+                number_text.setText(""+result);
+                break;
+        }
     
-    //double n = Integer.parseInt(number_text.getText());
-    number_text.setText(""+ findFactorial((int)expo_y));   
-    }*/else if ("squaring".equals(opr)){
-    double squaring = Math.pow(expo_x, 2);
-    number_text.setText("" + squaring);
-    }else if("cubing".equals(opr)){
-    double cubing = Math.pow(expo_x, 3);
-    number_text.setText("" + cubing);
-    }else if("exponentiation".equals(opr)){
-    expo_opr = Math.pow(expo_x, expo_y);
-    number_text.setText("" + expo_opr);
-    }else if("multi".equals(opr)){
-    double multi = expo_x * expo_y;
-    number_text.setText("" + multi);
-    }else if("division".equals(opr)){
-    double division = expo_x / expo_y;
-    number_text.setText("" + division);
-    }else{
-    calculat();
-    number_text.setText(""+result);
-    }
+    result = 0;
+    number = 0;
+    opr = "";
+    
+    
     }//GEN-LAST:event_btn_ActionPerformed
 
     private void btn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_0ActionPerformed
