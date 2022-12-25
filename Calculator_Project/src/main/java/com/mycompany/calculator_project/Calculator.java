@@ -34,8 +34,20 @@ public class Calculator extends javax.swing.JFrame {
         case"/":
              result = number /Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
-             break;     
-    }}
+             break;
+        case"%":
+             result = number %Double.parseDouble(number_text.getText());
+             number_text.setText(""+result);
+             break;
+        
+    }
+    }
+    public int findFactorial(int n){
+     if(n!=0)
+         return n*findFactorial(n-1);
+     else
+         return 1;
+ }
     public Calculator() {
     initComponents();
     }
@@ -478,13 +490,11 @@ public class Calculator extends javax.swing.JFrame {
     double n_croot = Double.parseDouble(number_text.getText());
     double cb_root = Math.cbrt(n_croot);
     number_text.setText(""+cb_root);
-    }else if ("factorial".equals(opr)){
-    double nfactorial = Integer.parseInt(number_text.getText());
-    long rfactorial=1;
-    for (int i=2; i<=nfactorial; i++)
-    rfactorial *= i;
-    number_text.setText(""+rfactorial);   
-    }else if ("squaring".equals(opr)){
+    }/*else if ("factorial".equals(opr)){
+    
+    //double n = Integer.parseInt(number_text.getText());
+    number_text.setText(""+ findFactorial((int)expo_y));   
+    }*/else if ("squaring".equals(opr)){
     double squaring = Math.pow(expo_x, 2);
     number_text.setText("" + squaring);
     }else if("cubing".equals(opr)){
@@ -514,7 +524,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_dotActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
-    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)||"%".equals(opr)){
     calculat();
     }
     opr="-";
@@ -523,7 +533,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_subActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)||"%".equals(opr)){
     calculat();
     }
     opr="/";
@@ -532,7 +542,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_divideActionPerformed
 
     private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        // TODO add your handling code here:
+    if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)||"%".equals(opr)){
+    calculat();
+    }
+    opr="%";
+    number =Double.parseDouble(number_text.getText());
+    number_text.setText("");
     }//GEN-LAST:event_modActionPerformed
 
     private void root2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root2ActionPerformed
@@ -541,7 +556,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_root2ActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
- if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)){
+ if("+".equals(opr)||"-".equals(opr)||"*".equals(opr)||"/".equals(opr)||"%".equals(opr)){
     calculat();
     }
     opr="*";
@@ -550,8 +565,10 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void factorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_factorialActionPerformed
-    opr = "factorial";
-    opr_label.setText("n!");
+        //opr = "factorial";
+       // opr_label.setText("n!");
+      int x =  findFactorial(Integer.parseInt(number_text.getText()));
+        number_text.setText(""+ x);
     }//GEN-LAST:event_factorialActionPerformed
 
     private void root3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_root3ActionPerformed
@@ -698,4 +715,8 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton root4;
     private javax.swing.JButton sub;
     // End of variables declaration//GEN-END:variables
+
+    private void findFactorial() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
