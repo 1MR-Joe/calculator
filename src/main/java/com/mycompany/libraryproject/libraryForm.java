@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.libraryproject;
+import java.lang.String;
 /**
  *
  * @author DELL
@@ -11,8 +12,83 @@ public class libraryForm extends javax.swing.JFrame {
     /**
      * Creates new form libraryForm
      */
+    //creating arrays
+    String[][] books = new String[20][4];
+    int booksNumbers[] = new int[20];
+   
+    
+    
     public libraryForm() {
         initComponents();
+        
+        //initialising columns
+        books[0][0] = "id";
+        books[0][1] = "book name";
+        books[0][2] = "Author name";
+        books[0][3] = "Category";
+        
+        //first book data
+        //books ids
+        int idStr = 1000;
+        for(int i = 1; i<=10; i++){    
+            ++idStr;
+            String id = String.valueOf(idStr);
+            books[i][0] = id;
+        }
+        
+       //book 1
+       //name
+       books[1][1] = "A tale of two citys";
+       //author name
+       books[1][2] = "charles dickens";
+       //category 
+       books[1][3] = "Novels";
+       
+       //book 2
+       //name
+       books[2][1] = "Hamlet";
+       //author name
+       books[2][2] = "William Shakespeare";
+       //category 
+       books[2][3] = "Novels";
+       
+       //book 3
+       //name
+       books[3][1] = "behind the nature";
+       //author name
+       books[3][2] = "Ahmed Khaled tawfik";
+       //category 
+       books[3][3] = "Novels";
+       
+       //book 4
+       //name
+       books[3][1] = "LOLITA";
+       //author name
+       books[3][2] = "Vladimir Nabokov";
+       //category 
+       books[3][3] = "Novels";
+       
+       //book 5
+       //name
+       books[4][1] = "THE GRAPES OF WRATH";
+       //author name
+       books[4][2] = "John Steinbeck";
+       //category 
+       books[4][3] = "Novels";
+       
+       
+       
+       for(int i = 0; i<=10; i++){
+           for(int j = 0; j<4; j++){
+               System.out.print(books[i][j]+"|");
+           }
+           System.out.println("\n");
+       }
+        
+      
+        
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +111,7 @@ public class libraryForm extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
+        searchText = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -68,6 +144,11 @@ public class libraryForm extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setText("Add new book");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setText("check out");
@@ -76,7 +157,7 @@ public class libraryForm extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("Delet the book");
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        searchText.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jButton5.setText("Search by id");
 
@@ -97,7 +178,7 @@ public class libraryForm extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -141,7 +222,7 @@ public class libraryForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,6 +244,10 @@ public class libraryForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -213,6 +298,6 @@ public class libraryForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField searchText;
     // End of variables declaration//GEN-END:variables
 }
