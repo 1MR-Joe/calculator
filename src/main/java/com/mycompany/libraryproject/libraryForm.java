@@ -119,7 +119,7 @@ public class libraryForm extends javax.swing.JFrame {
        //name
        books[9][1] = "Tron: Legacy";
        //author name
-       books[9][2] = "James Ponti ";
+       books[9][2] = "James Ponti";
        //category 
        books[9][3] = "Fiction";
        //status
@@ -383,7 +383,8 @@ public class libraryForm extends javax.swing.JFrame {
                 foundLabel.setText("Not found !");
                 break;
             }
-            if(bookName.getText().toLowerCase().equals(books[i][1].toLowerCase())){
+            
+            if(bookName.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][1].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
                 bookId.setText(books[i][0]);
                 bookName.setText(books[i][1]);
@@ -424,7 +425,7 @@ public class libraryForm extends javax.swing.JFrame {
                 foundLabel.setText("Not found !");
                 break;
             }
-            if(bookId.getText().toLowerCase().equals(books[i][0].toLowerCase())){
+            if(bookId.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
                 bookId.setText(books[i][0]);
                 bookName.setText(books[i][1]);
@@ -453,7 +454,7 @@ public class libraryForm extends javax.swing.JFrame {
                 break;
             }
             
-            if(bookAuthor.getText().toLowerCase().equals(books[i][2].toLowerCase())){
+            if(bookAuthor.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][2].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
                 bookId.setText(books[i][0]);
                 bookName.setText(books[i][1]);
