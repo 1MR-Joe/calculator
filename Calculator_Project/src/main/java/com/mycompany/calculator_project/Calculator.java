@@ -93,12 +93,19 @@ public class Calculator extends javax.swing.JFrame {
         opr_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculator");
         setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        setResizable(false);
 
         number_text.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         number_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 number_textActionPerformed(evt);
+            }
+        });
+        number_text.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                number_textKeyTyped(evt);
             }
         });
 
@@ -491,10 +498,6 @@ public class Calculator extends javax.swing.JFrame {
                 double square_root =  Math.sqrt(n_root);
                 number_text.setText(""+square_root);
                 break;
-        /*else if ("factorial".equals(opr)){
-        //double n = Integer.parseInt(number_text.getText());
-        number_text.setText(""+ findFactorial((int)expo_y));
-        }*/
             case "cb_root":
                 double n_croot = Double.parseDouble(number_text.getText());
                 double cb_root = Math.cbrt(n_croot);
@@ -665,6 +668,14 @@ public class Calculator extends javax.swing.JFrame {
     number =Double.parseDouble(number_text.getText());
     number_text.setText("");
     }//GEN-LAST:event_addActionPerformed
+
+    private void number_textKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_number_textKeyTyped
+        // TODO add your handling code here:
+       char enter = evt.getKeyChar();
+       if(!(Character.isDigit(enter))){
+           evt.consume();
+       }
+    }//GEN-LAST:event_number_textKeyTyped
 
     /**
      * @param args the command line arguments
