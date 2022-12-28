@@ -354,6 +354,11 @@ public class libraryForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       if(bookId.getText().equals("")||bookName.getText().equals("")||bookAuthor.getText().equals("")
+               ||bookCategory.getText().equals(""))
+           foundLabel.setText("Fill the text fields first");
+       else{
+        foundLabel.setText("");
         for(int i=1;i<books.length;i++){
             if(books[i][0]==null){
                 books [i][0]=bookId.getText();
@@ -363,6 +368,7 @@ public class libraryForm extends javax.swing.JFrame {
                 break;
             }
         }
+       }
         bookId.setText("");
         bookName.setText("");
         bookAuthor.setText("");
