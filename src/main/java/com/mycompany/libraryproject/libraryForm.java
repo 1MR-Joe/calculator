@@ -27,7 +27,7 @@ public class libraryForm extends javax.swing.JFrame {
         books[0][1] = "book name";
         books[0][2] = "Author name";
         books[0][3] = "Category";
-        books[0][4] = "Statuse";
+        books[0][4] = "Status";
         
         //first book data
         //books ids
@@ -45,7 +45,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[1][2] = "charles dickens";
        //category 
        books[1][3] = "Novels";
-       //statuse
+       //status
        books[1][4] = "not borrowd";
        
        //book 2
@@ -55,7 +55,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[2][2] = "William Shakespeare";
        //category 
        books[2][3] = "Novels";
-       //statuse
+       //status
        books[2][4] = "not borrowd";
        
        //book 3
@@ -65,7 +65,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[3][2] = "Ahmed Khaled tawfik";
        //category 
        books[3][3] = "Novels";
-       //statuse
+       //status
        books[3][4] = "not borrowd";
        //book 4
        //name
@@ -74,7 +74,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[4][2] = "Vladimir Nabokov";
        //category 
        books[4][3] = "Novels";
-       //statuse
+       //status
        books[4][4] = "not borrowd";
        
        //book 5
@@ -92,7 +92,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[6][2] = "James Patterson";
        //category 
        books[6][3] = "Fiction";
-       //statuse
+       //status
        books[6][4] = "not borrowd";
        
        //book 7
@@ -102,7 +102,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[7][2] = "J. K. Rowling";
        //category 
        books[7][3] = "Children Books";
-       //statuse
+       //status
        books[7][4] = "not borrowd";
        
        //book 8
@@ -112,7 +112,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[8][2] = "Agatha Christie";
        //category 
        books[8][3] = "Fiction";
-       //statuse
+       //status
        books[8][4] = "not borrowd";
        
        //book 9
@@ -122,7 +122,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[9][2] = "James Ponti ";
        //category 
        books[9][3] = "Fiction";
-       //statuse
+       //status
        books[9][4] = "not borrowd";
        
        //book 10
@@ -132,7 +132,7 @@ public class libraryForm extends javax.swing.JFrame {
        books[10][2] = "James Clear";
        //category 
        books[10][3] = "self improvement";
-       //statuse
+       //status
        books[10][4] = "not borrowd";
        
        for(int i = 0; i<=10; i++){
@@ -432,6 +432,9 @@ public class libraryForm extends javax.swing.JFrame {
                 bookCategory.setText(books[i][3]);
                 bookStatuse.setText(books[i][4]);
                 break;
+            }else{
+                foundLabel.setText("Not found !");
+                break;
             }
             
            
@@ -439,7 +442,31 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        foundLabel.setText("");
+        
+        System.out.println(bookAuthor.getText());
+        
+        for(int i = 1; i < books.length; i++){
+            //check
+            if(books[i][2] == null){
+                foundLabel.setText("Not found !");
+                break;
+            }
+            
+            if(bookAuthor.getText().toLowerCase().equals(books[i][2].toLowerCase())){
+                isFound = true;
+                bookId.setText(books[i][0]);
+                bookName.setText(books[i][1]);
+                bookAuthor.setText(books[i][2]);
+                bookCategory.setText(books[i][3]);
+                bookStatuse.setText(books[i][4]);
+                break;
+            }
+//            else{
+//                foundLabel.setText("Not found !");
+//                break;
+//            }
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
     /**
      * @param args the command line arguments
