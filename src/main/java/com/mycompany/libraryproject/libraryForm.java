@@ -228,6 +228,11 @@ public class libraryForm extends javax.swing.JFrame {
         jButton4.setText("Delet the book");
 
         jButton5.setText("Search by id");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton6.setText("reset");
@@ -238,6 +243,11 @@ public class libraryForm extends javax.swing.JFrame {
         });
 
         jButton7.setText("Search by author");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Statuse");
@@ -388,6 +398,31 @@ public class libraryForm extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        foundLabel.setText("");
+        for(int i = 1; i<20;i++){
+            if(books[i][1] == null){
+                foundLabel.setText("Not found !");
+                break;
+            }
+            if(bookId.getText().toLowerCase().equals(books[i][0].toLowerCase())){
+                isFound = true;
+                bookId.setText(books[i][0]);
+                bookName.setText(books[i][1]);
+                bookAuthor.setText(books[i][2]);
+                bookCategory.setText(books[i][3]);
+                bookStatuse.setText(books[i][4]);
+                break;
+            }
+            
+           
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
     /**
      * @param args the command line arguments
      */
