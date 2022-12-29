@@ -425,7 +425,7 @@ public class libraryForm extends javax.swing.JFrame {
                 foundLabel.setText("Not found !");
                 break;
             }
-            if(bookId.getText().toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
+            if(bookId.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
                 bookId.setText(books[i][0]);
                 bookName.setText(books[i][1]);
