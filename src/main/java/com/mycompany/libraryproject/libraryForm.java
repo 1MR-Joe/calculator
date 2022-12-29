@@ -425,16 +425,13 @@ public class libraryForm extends javax.swing.JFrame {
                 foundLabel.setText("Not found !");
                 break;
             }
-            if(bookId.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
+            if(bookId.getText().toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
                 bookId.setText(books[i][0]);
                 bookName.setText(books[i][1]);
                 bookAuthor.setText(books[i][2]);
                 bookCategory.setText(books[i][3]);
                 bookStatuse.setText(books[i][4]);
-                break;
-            }else{
-                foundLabel.setText("Not found !");
                 break;
             }
             
