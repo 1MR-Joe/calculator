@@ -354,7 +354,19 @@ public class libraryForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        for(int i=1;i<books.length;i++){
+            if(books[i][0]==null){
+                books [i][0]=bookId.getText();
+                books [i][1]=bookName.getText();
+                books [i][2]=bookAuthor.getText();
+                books [i][3]=bookCategory.getText();
+                break;
+            }
+        }
+        bookId.setText("");
+        bookName.setText("");
+        bookAuthor.setText("");
+        bookCategory.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
