@@ -143,7 +143,7 @@ public class libraryForm extends javax.swing.JFrame {
            }
            System.out.println("\n");
        }
-       
+       //printing array
        for(int i = 1; i<20; i++){
           if(books[i][0] == null){
                sortText.setText(sortText.getText()+"\n"+"");
@@ -152,13 +152,7 @@ public class libraryForm extends javax.swing.JFrame {
           }
        }
        
-         for(int i=1; i<20; i++){
-          for(int j = 1; j<5; j++){
-              if(books[i][j] == null){
-                  books[i][j] = " ";
-              }
-          }
-      }
+     
 
 
     
@@ -504,12 +498,20 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_bookNameActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        sortText.setText("");
         bookId.setText("");
         bookName.setText("");
         bookAuthor.setText("");
         bookCategory.setText("");
         bookStatuse.setText("");
         foundLabel.setText("");
+            for(int i = 1; i<20; i++){
+          if(books[i][0] == null){
+               sortText.setText(sortText.getText()+"\n"+"");
+          }else{
+           sortText.setText(sortText.getText()+"\n"+books[i][1]);
+          }
+       }
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -542,8 +544,40 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     
-     
+sortText.setText("");
+   //fiiling sorted array
+   String sorted[] = new String[20];
+   for(int i=1; i<20; i++){
+       if(books[i][1] != null){
+           sorted[i] = books[i][1];
+       }
+   }
+   //filling null values
+   for(int i = 1; i<20; i++){
+       if(sorted[i] == null){
+           sorted[i] = "";
+       }    
+   }
+   //sort
+   for(int i = 1; i<20; i++){
+       for(int j = i+1; j<20; j++){
+           if(sorted[i].compareToIgnoreCase(sorted[j])>0){
+               temp = sorted[i];
+               sorted[i] = sorted[j];
+               sorted[j] = temp;
+           }
+       }
+   }
+   //print
+   
+   for(int i = 1; i<20; i++){
+          if(sorted[i] == null){
+               sortText.setText(sortText.getText()+"\n"+"");
+          }else{
+           sortText.setText(sortText.getText()+"\n"+sorted[i]);
+          }
+       }
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
