@@ -510,7 +510,13 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+           for(int i=1;i<books.length;i++){
+       if(books[i][0].equals(bookId.getText())){
+         for(int j=0;j<books.length;j++){
+           books[i][j]=null;  
+         }  
+       }
+      }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
