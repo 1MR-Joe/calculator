@@ -578,7 +578,25 @@ sortText.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        //make list empty
+        sortText.setText("");
+        
+        String sorted[] = new String[20];
+        
+        for(int i = 1; i < 20; i++){
+            if(books[i][0] != null){//making sure there's a value
+                int id = Integer.parseInt(books[i][0]);
+                sorted[(id - 1000)] = books[i][1];//1005 - 1000 = 5 !
+            }
+        }
+        //just printing
+        for(int i = 0; i < 20; i++){
+            if(sorted[i] != null){
+                System.out.println(sorted[i]);
+                sortText.setText(sortText.getText()+"\n"+sorted[i]);
+            }
+        }
+       
     }//GEN-LAST:event_jButton7ActionPerformed
     /**
      * @param args the command line arguments
