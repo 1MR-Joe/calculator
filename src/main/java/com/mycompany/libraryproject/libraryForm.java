@@ -510,13 +510,26 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-           for(int i=1;i<20;i++){
+         for(int i=1;i<20;i++){
             if(bookId.getText().equals(books[i][0])){
          for(int j=0;j<5;j++){
            books[i][j]=null;  
          }  
        }
       }
+        bookId.setText("");
+        bookName.setText("");
+        bookAuthor.setText("");
+        bookCategory.setText("");
+        bookStatuse.setText("");
+        foundLabel.setText("");
+          for(int i = 1; i<20; i++){
+          if(books[i][0] == null){
+               sortText.setText(sortText.getText()+"\n"+"");
+          }else{
+           sortText.setText(sortText.getText()+"\n"+books[i][1]);
+          }
+       }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
