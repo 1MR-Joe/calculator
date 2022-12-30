@@ -17,7 +17,7 @@ public class libraryForm extends javax.swing.JFrame {
     String[][] books = new String[20][5];
     int booksNumbers[] = new int[20];
     String temp;
-    boolean isFound = false;
+    boolean isFound = true;
    
     
     
@@ -62,7 +62,7 @@ public class libraryForm extends javax.swing.JFrame {
        
        //book 3
        //name
-       books[3][1] = "ما وراء الطبيعة";
+       books[3][1] = "behind the nature";
        //author name
        books[3][2] = "Ahmed Khaled tawfik";
        //category 
@@ -429,8 +429,9 @@ public class libraryForm extends javax.swing.JFrame {
         foundLabel.setText("");
         for(int i = 1; i<20;i++){
             if(books[i][1] == null){
-                foundLabel.setText("Not found !");
-                break;
+                isFound = false;
+                
+                continue;
             }
             
             if(bookName.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][1].replaceAll("\\s+","").toLowerCase())){
@@ -448,8 +449,8 @@ public class libraryForm extends javax.swing.JFrame {
              foundLabel.setText("");
         for(int i = 1; i<20;i++){
             if(books[i][1] == null){
-                foundLabel.setText("Not found !");
-                break;
+                isFound = false;
+                continue;
             }
             if(bookId.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][0].replaceAll("\\s+","").toLowerCase())){
                 isFound = true;
@@ -469,8 +470,8 @@ public class libraryForm extends javax.swing.JFrame {
         for(int i = 1; i < books.length; i++){
             //check
             if(books[i][2] == null){
-                foundLabel.setText("Not found !");
-                break;
+                isFound = false;
+                continue;
             }
             
             if(bookAuthor.getText().replaceAll("\\s+","").toLowerCase().equals(books[i][2].replaceAll("\\s+","").toLowerCase())){
@@ -483,6 +484,10 @@ public class libraryForm extends javax.swing.JFrame {
                 break;
             }
         }
+        }
+        
+        if(isFound == false){
+            foundLabel.setText("Not found !");
         }
         
       
@@ -511,7 +516,23 @@ public class libraryForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-     
+
+       if("not borrowd".equals(bookStatuse.getText())){
+           for(int i = 1; i<20; i++){
+               if(bookId.getText().equals(books[i][0])){
+                   bookStatuse.setText("borrowd");
+                   books[i][4] = "borrowd";
+               }
+           }
+       }else if("borrowd".equals(bookStatuse.getText())){
+             for(int i = 1; i<20; i++){
+               if(bookId.getText().equals(books[i][0])){
+                   bookStatuse.setText("not borrowd");
+                   books[i][4] = "not borrowd";
+               }
+           }
+       }
+        
    
         
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -552,7 +573,7 @@ sortText.setText("");
    //filling null values
    for(int i = 1; i<20; i++){
        if(sorted[i] == null){
-           sorted[i] = "";
+           sorted[i] = "|";
        }    
    }
    //sort
