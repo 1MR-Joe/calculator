@@ -52,6 +52,8 @@ public class Calculator extends javax.swing.JFrame {
                 number_text.setText(""+result);
                 break;
             case"p":
+                //per
+                
                 int np = (int)number;
                 int rp = Integer.parseInt(number_text.getText());
                 result = (findFactorial(np))/(findFactorial(np-rp));
