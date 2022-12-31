@@ -39,6 +39,22 @@ public class Calculator extends javax.swing.JFrame {
              result = number %Double.parseDouble(number_text.getText());
              number_text.setText(""+result);
              break;
+        case"c":
+                int n = (int)number;
+                int r = Integer.parseInt(number_text.getText());
+                int per = (findFactorial(n))/(findFactorial(n-r));
+                result = per/findFactorial(n);
+                
+                //process
+               result = (findFactorial(n)/(findFactorial(r)*findFactorial(n-r)));
+               
+                number_text.setText(""+result);
+                break;
+            case"p":
+                int np = (int)number;
+                int rp = Integer.parseInt(number_text.getText());
+                result = (findFactorial(np))/(findFactorial(np-rp));
+                break;
         
     }
     }
@@ -301,16 +317,14 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
-        btn_10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_10.setText(" (");
+        btn_10.setText("nCr");
         btn_10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_10ActionPerformed(evt);
             }
         });
 
-        btn_11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_11.setText(")");
+        btn_11.setText("nPr");
         btn_11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_11ActionPerformed(evt);
@@ -460,7 +474,7 @@ public class Calculator extends javax.swing.JFrame {
                     .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cls, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(backspace, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -523,6 +537,9 @@ public class Calculator extends javax.swing.JFrame {
                 double division = expo_x / expo_y;
                 number_text.setText("" + division);
                 break;
+            
+                
+                
             default:
                 calculat();
                 number_text.setText(""+result);
@@ -637,11 +654,18 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_root4ActionPerformed
 
     private void btn_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_10ActionPerformed
-    number_text.setText(number_text.getText()+"(");        // TODO add your handling code here:
+
+    
+    number = Integer.parseInt(number_text.getText());
+    opr = "c";
+    number_text.setText("");
+   
     }//GEN-LAST:event_btn_10ActionPerformed
 
     private void btn_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_11ActionPerformed
-    number_text.setText(number_text.getText()+")");
+    number = Integer.parseInt(number_text.getText());
+    opr = "p";
+    number_text.setText("");
     }//GEN-LAST:event_btn_11ActionPerformed
 
     private void btn_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_12ActionPerformed
