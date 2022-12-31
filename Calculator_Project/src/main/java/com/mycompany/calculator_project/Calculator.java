@@ -40,6 +40,7 @@ public class Calculator extends javax.swing.JFrame {
              number_text.setText(""+result);
              break;
         case"c":
+            //combination
                 int n = (int)number;
                 int r = Integer.parseInt(number_text.getText());
                 int per = (findFactorial(n))/(findFactorial(n-r));
